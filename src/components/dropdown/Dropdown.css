@@ -1,0 +1,36 @@
+.dropdown-content {
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                opacity 0.2s ease,
+                border 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    border: none;
+}
+
+.dropdown-content.open {
+    max-height: 200px; 
+    opacity: 1;
+    border: 2px solid rgb(107 114 128);
+}
+
+.dropdown-content > * {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.dropdown-content.open > * {
+    opacity: 1;
+}
+
+.ddbutton {
+    transition:background-color 0.3s ease;
+}
+
+.ddbutton:hover {
+    background-color:rgb(107 114 128);
+}
+
+.ddbutton.open {
+    background-color:rgb(107 114 128);
+}
