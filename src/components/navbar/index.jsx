@@ -1,7 +1,10 @@
-import React, { useState, useEffect,  } from "react";
+import React, { useState, useEffect } from "react";
+import { Link,  useNavigate } from 'react-router-dom';
+
 
 export default function Navbar() {
     const [isSignedIn, setIsSignedIn] = useState(false)
+    const navigate = useNavigate();
 
     useEffect(() => {
         const signInStatus = localStorage.getItem('isSignedIn');
@@ -14,6 +17,10 @@ export default function Navbar() {
         const newSignInStatus = !isSignedIn;
         setIsSignedIn(newSignInStatus);
         localStorage.setItem('isSignedIn', newSignInStatus); // debug, put auth for final!!!!!!!
+
+        if (!newSignInStatus) {  // If signing out
+          navigate('/');  // Redirect to home page
+        }
       };
     
 
@@ -26,8 +33,8 @@ export default function Navbar() {
                 <div className="flex w-64 items-center justify-center"><a href='/' ><img src="../../../public/logo.png" alt="Conference logo"></img> </a></div>
                 <div className="hidden md:flex flex-row gap-16">
 
-                    <a href='/explore'>Explore</a>
-                     <a href='/chat'>Chat</a>
+                    <Link to='/explore'>Explore</Link>
+                     <Link to='/chat'>Chat</Link>
                      <p></p>
 
                 </div> 
@@ -37,7 +44,7 @@ export default function Navbar() {
         <div className="hidden md:flex text-xl items-center flex-row gap-4 ml-auto">
                 {/* Conditionally render based on isSignedIn state */}
         {isSignedIn ? (
-          <a href='/profile'>Profile</a>
+          <Link to='/profile'>Profile</Link>
         ) : (
           <p></p>
         )}

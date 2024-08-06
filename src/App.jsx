@@ -1,31 +1,32 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Dropdown from './components/dropdown'
 import Navbar from './components/navbar'
-import Hero from './components/hero'
+import Bottombar from './components/bottombar';
+import Home from './pages/home'
+import NotFound from './pages/notfound'
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-    <Navbar />
-    <Hero />
-    <div className='flex flex-row'>
-    <Dropdown title="HELO" content="hello" />
-     <Dropdown title="Biology" content="Bio" />
-     <Dropdown title="Physics" content="Physics" />
-     <Dropdown title="Chemistry" content="Chemistry" />
-    </div>
-    
-      <div id="card" className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
 
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Home />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <Bottombar />
       </div>
+    </Router>
 
-    </>
   )
 }
 
