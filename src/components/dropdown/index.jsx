@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Dropdown.css'; 
 import CalendlyWidget from '../calendlywidget';
+import { Link } from "react-router-dom";
+
+// Todo: open chat with that user  on the link to
 
 export default function Dropdown({ name, content, link }) {
   const [isOpen, setIsOpen] = useState(false); // destructure react hook 
@@ -22,7 +25,7 @@ export default function Dropdown({ name, content, link }) {
 
         <div className='flex gap-4'>
             <CalendlyWidget username='camtmanzo' />
-            <p>Chat</p>
+            <Link to='/chat'>Send a message</Link>
         </div>
 
         

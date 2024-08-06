@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Bottombar from './components/bottombar';
 import Home from './pages/home';
 import Explore from './pages/explore';
+import Chat from './pages/chat';
 import NotFound from './pages/notfound';
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Home />} /> 
           <Route path="/explore" element={<Explore />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Bottombar />
