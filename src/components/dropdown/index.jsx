@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Dropdown.css'; 
+import CalendlyWidget from '../calendlywidget';
 
-export default function Dropdown({ title, content }) {
+export default function Dropdown({ name, content, link }) {
   const [isOpen, setIsOpen] = useState(false); // destructure react hook 
 
   const toggleDropdown = () => {
@@ -9,15 +10,22 @@ export default function Dropdown({ title, content }) {
   };
 
   return (
-    <div className="m-2 z-50 drop-shadow-md relative flex flex-col">
+    <div className="m-2 drop-shadow-lg relative flex flex-col">
       <button
         onClick={toggleDropdown}
         className={`bg-gray-600 ddbutton text-white p-2 ${isOpen ? 'rounded-t-md open' : 'rounded-md'}`}
       >
-        {title}
+        {name}
       </button>
       <div className={`bg-gray-400 dropdown-content ${isOpen ? 'open' : 'closed'} p-2 rounded-b-md`}>
         {content}
+
+        <div className='flex gap-4'>
+            <CalendlyWidget username='camtmanzo' />
+            <p>Chat</p>
+        </div>
+
+        
       </div>
     </div>
   );

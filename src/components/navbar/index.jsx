@@ -28,7 +28,7 @@ export default function Navbar() {
 
 
     return(
-        <div className="top-0 w-screen sticky py-2 flex px-4 bg-zinc-500">
+        <div className="top-0 z-50 w-screen sticky py-2 flex px-4 bg-zinc-500">
              <div className="flex text-xl items-center flex-row gap-16">
                 <div className="flex w-64 items-center justify-center"><a href='/' ><img src="../../../public/logo.png" alt="Conference logo"></img> </a></div>
                 <div className="hidden md:flex flex-row gap-16">
