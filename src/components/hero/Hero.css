@@ -2,4 +2,23 @@
     background-color: #ef9898;
     padding:16px 20px;
     font-size: 40px;
+    transition: background-color 0.25s;
 }
+
+.calltoaction:hover {
+    background-color: #a55d5d;
+    text-decoration: none !important; /* bcs its a link bypass index.css */
+}
+
+
+.hero {
+    background: linear-gradient(90deg, rgba(254, 165, 124, 0.5), rgba(0, 0, 0, 0.5), rgba(255, 145, 145, 0.5)), /* Gradient overlay */
+        url('pa.jpg'); /* Background image */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+  
+}
+
