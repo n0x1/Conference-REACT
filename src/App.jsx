@@ -5,11 +5,12 @@ import Dropdown from './components/dropdown'
 import Navbar from './components/navbar'
 import Bottombar from './components/bottombar';
 import Home from './pages/home'
+import Explore from './pages/explore';
 import NotFound from './pages/notfound'
 
 
 
-
+//login should be its own page tbd
 function App() {
 
 
@@ -20,7 +21,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Home />} />
+          <Route path="/login" element={<Home />} /> 
+          <Route path="/explore" element={<Explore />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Bottombar />

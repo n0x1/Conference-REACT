@@ -1,25 +1,37 @@
 import React from "react";
+import './Info.css'
 
 export default function Info() {
     return(
-<div className="relative h-96 mx-4">
-<div className="rounded-md flex items-center text-center w-fit flex py-2 flex-col bg-zinc-800 mt-4 px-4">
+        <>
+           <h1 className="text-center mt-2 shadow-sm"><b>How it works</b></h1> 
+
+           <div className="flex flex-row items-start space-evenly place-content-evenly h-64 mx-0 md:mx-4">
+<div className="container rounded-md flex items-center text-center w-1/4 flex flex-col py-2 bg-zinc-800 mt-4 px-4">
             <h2 className="text-2xl justify-center" >Browse tutors</h2>
-            <p>Browse tutors and find one that fits your needs</p>
+            <img className="py-4 invert w-24 h-24 md:w-32 md:h-32" src='../../../browse.svg'></img>
+            <p>Browse available tutors in our database</p>
         </div>
-        <div className="rounded-md items-center text-center flex flex-col absolute px-4 py-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-fit justify-center bg-zinc-800 mt-4">
-                <h2 className="text-2xl">Connect</h2>
-                <p>Browse tutors and find one that fits your needs</p>
+        <div className="container rounded-md items-center text-center flex flex-col px-4 py-2 w-1/4 justify-center bg-zinc-800 mt-4">
+                <h2 className="text-2xl top-0">Connect</h2>
+                <img className="w-32 invert" src='../../../public/connection.png'></img>
+                <p>Select a tutor fitting your needs</p>
                 
         </div>
-        <div  id='info-container' className="items-center text-center flex flex-col py-2 rounded-md absolute px-4 right-0 w-fit bg-zinc-800 mt-4">
+        <div  id='info-container' className="container items-center text-center flex flex-col py-2 rounded-md px-4 w-1/4 bg-zinc-800 mt-4">
                 <h2 className="text-2xl">Receive flexible support</h2>
-                <img src='../../../public/connection.png'></img>
-                <p>Browse tutors and find one that fits your needs</p> 
+                <div className="flex flex-row items-center py-4">
+                <img className="w-8 sm:w-16 lg:w-24 invert" src='../../../public/video.png'></img>
+                <p className="text-xl">・</p>
+                <img className="w-8 sm:w-16 md:w-24 invert" src='../../../public/talking.svg'></img>
+                </div>
+              
+                <p>Schedule and meet your preferred way</p> 
         </div>
 
 </div>
 
+        </>
       
     )
 }

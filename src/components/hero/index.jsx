@@ -22,7 +22,7 @@ export default function Hero() {
     return(
         <>
         <div className="flex justify-center items-center h-screen hero flex-col">
-            <h1 className="mb-4 ctatext text-center"><b>Find your peer tutor</b></h1>
+            <h1 className="mb-4 ctatext text-center"><b>Find the perfect peer tutor</b></h1>
 
             <div className="flex flex-row gap-2">
                 <button onClick={() => scrollToSection('info-container')} className="rounded-lg calltoaction">Learn More</button>
