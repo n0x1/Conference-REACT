@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import Subjectdropdown from "../../components/subjectdropdown";
+import './Profile.css'
 
 export default function Explore() {
     const [content, setContent] = useState("");
 
-    const handleInput = (event) => {
+    const handleBio = (event) => {
         const maxLength = 700; 
+        if (event.target.innerText.length <= maxLength) {
+          setContent(event.target.innerText);
+        } else {
+          event.target.innerText = content; 
+          event.preventDefault();
+        }
+      };
+
+      const handleName = (event) => {
+        const maxLength = 60; 
         if (event.target.innerText.length <= maxLength) {
           setContent(event.target.innerText);
         } else {
@@ -28,15 +39,15 @@ export default function Explore() {
 
                     <div className="flex">
                         Name:
-                        <div className="bg-gray-500 min-w-48 px-2 hover:pointer-cursor rounded-xl mx-2" contentEditable='true'></div>
+                        <div onInput={handleName} className="bg-gray-500 min-w-48 px-2 hover:pointer-cursor rounded-xl mx-2 single-line" contentEditable='true'></div>
                     </div>
 
                     <Subjectdropdown />
-
+ 
                     
                     <div className="mt-2">
                         Bio: 
-                        <div id='bio' onInput={handleInput} className="bg-gray-500 min-h-32 max-h-64 overflow-scroll px-2 hover:pointer-cursor rounded-xl" contentEditable='true'></div>
+                        <div id='bio' onInput={handleBio} className="bg-gray-500 min-h-32 max-h-64 overflow-scroll px-2 hover:pointer-cursor rounded-xl" contentEditable='true'></div>
                     </div>
                     </div>
 

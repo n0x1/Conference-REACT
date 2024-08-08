@@ -6,7 +6,7 @@ export default function Explore() {
     return(
         <div className="min-h-screen">
                 <h1 className="text-center py-2 mt-4">
-                    Login
+                    Create an Account
                 </h1>
                 <div>
                     <div>
@@ -25,9 +25,8 @@ export default function Explore() {
                     <input type='password' name='password' className="bg-gray-500 toggle-password-active:block min-w-48 px-2 hover:pointer-cursor rounded-xl mx-2"></input>
                     </div>
 
-                    <button type="submit" className="p-0.5 mt-2" >Sign in</button>
+                    <button type="submit" className="p-0.5 mt-2" >Create account</button>
 
-                    <a className="mt-12" href='signup'>Create an account</a>
                     </div>
 
             

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link,  useNavigate } from 'react-router-dom';
+import Logo from '../../media/logo.png'; 
 
 
 export default function Navbar() {
@@ -21,6 +22,9 @@ export default function Navbar() {
         if (!newSignInStatus) {  // If signing out
           navigate('/');  // Redirect to home page
         }
+        if (newSignInStatus) {  // If signing in (signinstatus is true)
+          navigate('/login');  // Redirect to login page
+        }
       };
     
 
@@ -30,7 +34,7 @@ export default function Navbar() {
     return(
         <div className="top-0 z-50 w-screen sticky py-2 flex px-4 bg-zinc-500">
              <div className="flex text-xl items-center flex-row gap-16">
-                <div className="flex w-64 items-center justify-center"><a href='/' ><img src="../../../public/logo.png" alt="Conference logo"></img> </a></div>
+                <div className="flex w-64 items-center justify-center"><a href='/' ><img src={Logo} alt="Conference logo"></img> </a></div>
                 <div className="hidden md:flex flex-row gap-16">
 
                     <Link to='/explore'>Explore</Link>

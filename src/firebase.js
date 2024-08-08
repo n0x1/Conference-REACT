@@ -7,8 +7,9 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Api key can't be used maliciously !!
 const firebaseConfig = {
-  apiKey: notsetupenv,
+  apiKey: "AIzaSyBDsnJcweSShL6n4XyiPgZWz32c-Lf860M",
   authDomain: "conference-f7660.firebaseapp.com",
   projectId: "conference-f7660",
   storageBucket: "conference-f7660.appspot.com",
