@@ -53,7 +53,7 @@ export default function Chat() {
             </div>
 
             <div className="flex">
-            <div className="border-l-2 border-b-2 border-t-2 justify-center flex border-l-2 w-1/4 border-black bg-zinc-800 ml-4 md:ml-16 rounded-bl-xl mb-4 p-2 flex flex-col gap-2"> 
+            <div className="border-l-2 border-b-2 w-auto border-t-2 justify-center flex border-l-2 w-1/4 border-black bg-zinc-800 ml-4 md:ml-16 rounded-bl-xl mb-4 p-2 flex flex-col gap-2"> 
             <a href="mailto:ctmanzo3@icloud.com?subject=Conference%20-%20Report%20Abuse&body=Please%20write%20the%20user%27s%20name%20and%20any%20evidence%20below.%20We%20will%20take%20appropriate%20action%20as%20soon%20as%20possible.%0A">Report Abuse</a>
             </div>
             <div className="border-2 justify-center flex border-l-2 w-2/3 border-black bg-zinc-400 mr-4 md:mr-16 rounded-br-xl mb-4 p-2 flex flex-col gap-2"> 

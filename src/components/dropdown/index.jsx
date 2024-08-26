@@ -3,6 +3,7 @@ import './Dropdown.css';
 import CalendlyWidget from '../calendlywidget';
 import { Link } from "react-router-dom";
 
+// not mobile one, this is for db
 // Todo: open chat with that user  on the link to
 
 export default function Dropdown({ name, content, link }) {

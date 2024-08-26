@@ -12,7 +12,7 @@ export default function Explore() {
                     <div>
                    
 
-                    <div className="border-y-2 border-l-2 border-black bg-zinc-400 min-h-64 px-2 mx-auto w-1/4 rounded-xl flex flex-col justify-center items-center mb-4"> 
+                    <div className="border-y-2 w-auto border-l-2 border-black bg-zinc-400 min-h-64 px-2 mx-auto w-1/4 rounded-xl flex flex-col justify-center items-center mb-4"> 
 
 
                     <div className="flex mb-2">
