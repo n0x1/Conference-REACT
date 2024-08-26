@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-function ProtectedLayout({ isSignedIn }) {
+function PrivateRoute({ isSignedIn }) {
   const location = useLocation();
 
   if (!isSignedIn) {
@@ -11,4 +11,4 @@ function ProtectedLayout({ isSignedIn }) {
   return <Outlet />;
 }
 
-export default ProtectedLayout;
+export default PrivateRoute;

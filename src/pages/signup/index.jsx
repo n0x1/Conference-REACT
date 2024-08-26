@@ -1,40 +1,58 @@
 import React, { useState } from "react";
 
-export default function Explore() {
+export default function Explore({ setIsSignedIn }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleLogin = () => {
+        //DEBUG
+    if (email && password) {
+      setIsSignedIn(true);
+    } else {
+      alert("Please enter both email and password.");
+    }
+  };
 
-    return(
-        <div className="min-h-screen">
-                <h1 className="text-center py-2 mt-4">
-                    Create an Account
-                </h1>
-                <div>
-                    <div>
-                   
+  return (
+    <div className="min-h-screen">
+      <h1 className="text-center py-2 mt-4">Login</h1>
+      <div>
+        <div>
+          <div className="border-y-2 w-auto border-l-2 border-black bg-zinc-400 min-h-64 px-2 mx-auto w-fit rounded-xl flex flex-col justify-center items-center mb-4">
+            <div className="flex mb-2">
+              <label className="text-2xl" htmlFor="email">Email:</label>
+              <input
+                type="text"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-gray-500 min-w-48 px-2 rounded-xl mx-2"
+              />
+            </div>
 
-                    <div className="border-y-2 border-l-2 border-black bg-zinc-400 min-h-64 px-2 mx-auto w-1/4 rounded-xl flex flex-col justify-center items-center mb-4"> 
+            <div className="flex">
+              <label className="text-2xl" htmlFor="password">Password:</label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="bg-gray-500 min-w-48 px-2 rounded-xl mx-2"
+              />
+            </div>
 
+            <button
+              type="button"
+              onClick={handleLogin}
+              className="p-0.5 mt-2"
+            >
+              Sign in
+            </button>
 
-                    <div className="flex mb-2">
-                        <label className="text-2xl" for='email'>Email:</label>
-                        <input type='text' name='email' className="bg-gray-500 min-w-48 px-2 hover:pointer-cursor rounded-xl mx-2"></input>
-                    </div>
-
-                    <div className="flex">
-                    <label className="text-2xl" for='password'>Password:</label>
-                    <input type='password' name='password' className="bg-gray-500 toggle-password-active:block min-w-48 px-2 hover:pointer-cursor rounded-xl mx-2"></input>
-                    </div>
-
-                    <button type="submit" className="p-0.5 mt-2" >Create account</button>
-
-                    </div>
-
-            
-                        
-                    </div>
-
-                </div>
+            <a className="mt-12" href="/signup">Create an account</a>
+          </div>
         </div>
-       
-    )
+      </div>
+    </div>
+  );
 }

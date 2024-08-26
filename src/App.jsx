@@ -28,15 +28,23 @@ function App() {
 
   const [isSignedIn, setIsSignedIn] = useState(false);
 
+  const handleSignOut = () => {
+    setIsSignedIn(false);
+    // localStorage.removeItem('some token')
+  };
+
   return (
 
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar isSignedIn={isSignedIn} onSignOut={handleSignOut}/>
         <Routes className='pages'>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login setIsSignedIn={setIsSignedIn} />} />
-          <Route path="/signup" element={<Signup />} /> 
+          <Route
+          path="/signup"
+          element={<Signup setIsSignedIn={setIsSignedIn} />}
+        />
 
         <Route element={<PrivateRoute isSignedIn={isSignedIn} />}>
           <Route path="/explore" element={<Explore />} />

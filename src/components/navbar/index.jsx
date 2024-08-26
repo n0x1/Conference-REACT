@@ -1,32 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link,  useNavigate } from 'react-router-dom';
 import Logo from '../../media/logo.png'; 
 
 //also handles mobile
-export default function Navbar() {
-    const [isSignedIn, setIsSignedIn] = useState(false)
-    const navigate = useNavigate();
+export default function Navbar({ isSignedIn, onSignOut}) {
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const signInStatus = localStorage.getItem('isSignedIn');
-        if (signInStatus === 'true') {
-          setIsSignedIn(true);
-        }
-      }, []); 
-    
-      const toggleSignIn = () => {
-        const newSignInStatus = !isSignedIn;
-        setIsSignedIn(newSignInStatus);
-        localStorage.setItem('isSignedIn', newSignInStatus); // debug, put auth for final!!!!!!!
-
-        if (!newSignInStatus) {  // If signing out
-          navigate('/');  // Redirect to home page
-        }
-        if (newSignInStatus) {  // If signing in (signinstatus is true)
-          navigate('/login');  // Redirect to login page
-        }
-      };
-    
+    const attemptSignIn = () => {
+      if (isSignedIn) {
+        onSignOut()
+        navigate('/')
+      } else {
+        navigate('/login');
+      }
+    };
 
       const [isOpen, setIsOpen] = useState(false); // mobile menu state
 
@@ -35,7 +22,7 @@ export default function Navbar() {
       <>
         <div className="top-0 z-50 w-screen sticky py-2 flex px-4 bg-zinc-500">
              <div className="flex text-xl items-center flex-row gap-16">
-                <div className="flex w-64 items-center justify-center"><a href='/' ><img src={Logo} alt="Conference logo"></img> </a></div>
+                <div className="flex w-64 items-center justify-center"><Link to='/' ><img src={Logo} alt="Conference logo"></img> </Link></div>
                 <div className="hidden md:flex flex-row gap-16">
 
                     <Link to='/explore'>Explore</Link>
@@ -53,8 +40,7 @@ export default function Navbar() {
         ) : (
           <p></p>
         )}
-        {/* Button to toggle sign in state for debug */}
-        <button className='rounded-md' onClick={toggleSignIn}>
+        <button className='rounded-md' onClick={attemptSignIn}>
           {isSignedIn ? 'Sign Out' : 'Sign In'}
         </button>
             </div>
@@ -87,7 +73,7 @@ export default function Navbar() {
                   <li><Link href="/explore" className="block text-right px-4 py-2 text-sm bg-gray-700">Explore</Link></li>
                   <li><Link to="/chat" className="block text-right px-4 py-2 text-sm bg-gray-700">Chat</Link></li>
                   {isSignedIn && (<li><Link to='profile' className="block text-right px-4 py-2 text-sm bg-gray-700">Profile</Link></li>)}
-                  <button className='rounded-md block text-right px-4 py-2 text-sm bg-gray-700 hover:bg-gray-700' onClick={toggleSignIn}>
+                  <button className='rounded-md block text-right px-4 py-2 text-sm bg-gray-700 hover:bg-gray-700' onClick={attemptSignIn}>
                     {isSignedIn ? 'Sign Out' : 'Sign In'}
                   </button>
                 </ul>
